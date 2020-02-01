@@ -2086,7 +2086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff6d7527ced59745be27efe33e802f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 3
+  Enemies: []
+  delayTime: 1
   patientItem: {fileID: 9180975280740821514, guid: 29e4e13af6791d14788f187f2ace7050,
     type: 3}
 --- !u!4 &1081237319

@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class enemyGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
+    public List<GameObject> Enemies;
     private float walkableFloor = 0.5f;
     private float walkableCiel = -0.5f;
     private int nowState = 1; // 0 = pause
@@ -25,21 +26,29 @@ public class enemyGenerator : MonoBehaviour
 
     // Update is called once per frame
 
-    void Wait()
+    void Init() 
     {
-        InvokeRepeating("Generate", 10, delayTime);
+        InvokeRepeating("Generate", 0, delayTime);
         int tempState = nowState;
         patientAmount = 0;
         nowState = tempState + 1;
-
+        foreach(var enemy in Enemies)
+            Destroy(enemy);
+        Enemies.Clear();
+    }
+    void Wait()
+    {
+        Invoke("Init", 20);
     }
     void Generate()
     {
         if(nowState != 0) {
             GameObject GoPatitentItem = UnityEngine.Object.Instantiate<GameObject>(patientItem, transform);
             float patientY = Random.Range(walkableFloor, walkableCiel);
+            GoPatitentItem.tag = "Type1";
+            GoPatitentItem.name = "P" + patientAmount;
             GoPatitentItem.transform.position = new Vector3(GoPatitentItem.transform.position.x, patientY, 0);
-            GoPatitentItem.GetComponent<patientItem>().Go();
+            Enemies.Add(GoPatitentItem);
             patientAmount += 1;
             if(patientAmount >= nowState * 3){
                 CancelInvoke("Generate");
