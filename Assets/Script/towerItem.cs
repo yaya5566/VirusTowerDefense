@@ -12,37 +12,43 @@ public enum TOWER_ITEM_TYPE {
 
 public class towerItem : MonoBehaviour
 {
-        [SerializeField]
-    private GameObject patientItem;
+    [SerializeField]
+    private SpriteRenderer sprite;
+    [SerializeField]
+    private List<Sprite> ListSprTowerFull;
+    [SerializeField]
+    private List<Sprite> ListSprTowerDie;
     // Start is called before the first frame update
     private TOWER_ITEM_TYPE eTIT = TOWER_ITEM_TYPE.NONE; 
 
     void Start()
     {
-        // GameObject GoPatitentItem = UnityEngine.Object.Instantiate<GameObject>(patientItem, transform);
-        // GetComponent<Button>().onClick.AddListener(delegate{
+        // gameObject.GetComponent<Button>().onClick.AddListener(delegate{
         //     onClick();
         // });
     }
 
-    public void onClick() {
-        GameObject GoPatitentItem = UnityEngine.Object.Instantiate<GameObject>(patientItem, transform);
+    void onClick() {
         switch(eTIT) {
             case TOWER_ITEM_TYPE.NONE:
                 eTIT = TOWER_ITEM_TYPE.RED;
-                GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
+                sprite.sprite = ListSprTowerFull[0];
+                // sprite.color = new Color(255, 0, 0);
             break;
             case TOWER_ITEM_TYPE.RED:
                 eTIT = TOWER_ITEM_TYPE.GREEN;
-                GetComponent<SpriteRenderer>().color = new Color(0, 255, 0);
+                sprite.sprite = ListSprTowerFull[1];
+                // sprite.color = new Color(0, 255, 0);
             break;
             case TOWER_ITEM_TYPE.GREEN:
                 eTIT = TOWER_ITEM_TYPE.BLUE;
-                GetComponent<SpriteRenderer>().color = new Color(0, 0, 255);
+                sprite.sprite = ListSprTowerFull[0];
+                // sprite.color = new Color(0, 0, 255);
             break;
             case TOWER_ITEM_TYPE.BLUE:
                 eTIT = TOWER_ITEM_TYPE.NONE;
-                GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+                sprite.sprite = ListSprTowerFull[1];
+                // sprite.color = new Color(255, 255, 255);
             break;
         }
     }
@@ -50,6 +56,8 @@ public class towerItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonUp(0)) {
+            onClick();
+        }
     }
 }
