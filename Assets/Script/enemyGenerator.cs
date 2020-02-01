@@ -8,8 +8,8 @@ public class enemyGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<GameObject> Enemies;
-    private float walkableFloor = 0.5f;
-    private float walkableCiel = -0.5f;
+    private float walkableFloor = 1.2f;
+    private float walkableCiel = -1.2f;
     private int nowState = 1; // 0 = pause
     private int waveSec = 30;
     private int patientAmount = 0;
@@ -38,7 +38,7 @@ public class enemyGenerator : MonoBehaviour
     }
     void Wait()
     {
-        Invoke("Init", 20);
+        Invoke("Init", 10);
     }
     void Generate()
     {
