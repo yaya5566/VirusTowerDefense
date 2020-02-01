@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class patientItem : MonoBehaviour
 {
-    private int HP = 10;
+    public int HP = 10;
     private int attributes = 1;
     private float fSec = 10;
     private float fMoveTmp = 0;
@@ -22,6 +22,9 @@ public class patientItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (HP <= 0) {
+            gameObject.tag = "Repaired";
+        }
         // 移動腳本改由patientMovement.cs處理
         // if(isMove == true) {
         //     transform.Translate((new Vector3(0, transform.position.y, 0) - transform.position) * Time.deltaTime * fSec);

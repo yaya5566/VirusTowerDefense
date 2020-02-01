@@ -31,6 +31,7 @@ public class towerItem : MonoBehaviour
         // gameObject.GetComponent<Button>().onClick.AddListener(delegate{
         //     onClick();
         // });
+        gameObject.tag = "Type1";
     }
 
     void onClick(TOWER_ITEM_TYPE _eTIT) {
@@ -57,6 +58,7 @@ public class towerItem : MonoBehaviour
                 // sprite.color = new Color(255, 255, 255);
             break;
         }
+
     }
 
     // private void OnMouseDown() {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9180975280740821557}
   - component: {fileID: 9180975280740821556}
   - component: {fileID: 9180975280740821515}
+  - component: {fileID: -8132640925742547288}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 26b18b086a4ab49ee811ba89b58c950b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75bce04809bcae1469c6013cdc597321, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,14 +101,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.7, y: 10.8}
+    oldSize: {x: 6.34, y: 10.8}
     newSize: {x: 4.7, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &9180975280740821556
 Rigidbody2D:
@@ -129,7 +130,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &9180975280740821515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +143,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97444841f05ba284aa6e16634378b444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 3
   rb: {fileID: 9180975280740821556}
   MovementDirection: 0
+--- !u!114 &-8132640925742547288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9180975280740821514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aaca60537b549adbbd95bb23127a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 10
