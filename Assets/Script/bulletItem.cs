@@ -16,13 +16,16 @@ public class bulletItem : MonoBehaviour
     void Update()
     {
         if(target != null){
-            fMoveTmp += (1f / 2f) * Time.deltaTime;
+            fMoveTmp += (1f / 1f) * Time.deltaTime;
             transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y,0), new Vector3(target.transform.position.x, target.transform.position.y, 0), fMoveTmp);
         }
         if(fMoveTmp >= 1) {
             target.GetComponent<patientItem>().HP -= 4;
             target = null;
             fMoveTmp = 0;
+            Destroy(gameObject);
+        }
+        if(target == null) {
             Destroy(gameObject);
         }
     }

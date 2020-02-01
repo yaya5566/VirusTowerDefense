@@ -38,7 +38,7 @@ public class enemyGenerator : MonoBehaviour
     }
     void Wait()
     {
-        Invoke("Init", 20);
+        Invoke("Init", 10);
     }
     void Generate()
     {

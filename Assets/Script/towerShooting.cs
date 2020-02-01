@@ -11,7 +11,10 @@ public class towerShooting : MonoBehaviour
     public enemyGenerator eg;
 
     private GameObject CurrentTarget;
-    public GameObject bulletObj;
+    public GameObject bulletType1;
+    public GameObject bulletType2;
+    public GameObject bulletType3;
+    private GameObject bulletObj;
     private bool CD = true;
     void Start()
     {
@@ -42,6 +45,20 @@ public class towerShooting : MonoBehaviour
     void Shooting()
     {
         if(CD == true) {
+            switch(gameObject.tag) {
+                case "Type1":
+                bulletObj = bulletType1;
+                break;
+                case "Type2":
+                bulletObj = bulletType2;
+                break;
+                case "Type3":
+                bulletObj = bulletType3;
+                break;
+                default:
+                bulletObj = bulletType1;
+                break;
+            }
             GameObject bullet = UnityEngine.Object.Instantiate<GameObject>(bulletObj, transform);
             bullet.GetComponent<bulletItem>().target = CurrentTarget;
             CD = false;
@@ -51,13 +68,15 @@ public class towerShooting : MonoBehaviour
     void SearchTarget() 
     {
         foreach (var enemy in eg.Enemies){
-            Vector3 target = new Vector3(enemy.transform.position.x, enemy.transform.position.y, 0);
-            if (enemy.tag != gameObject.tag) {
-                continue;
-            }
-            if (Vector3.Distance(transform.position, target) <= Range) {
-                CurrentTarget = enemy;
-            }
+            if(enemy != null) {
+                Vector3 target = new Vector3(enemy.transform.position.x, enemy.transform.position.y, 0);
+                if (enemy.tag != gameObject.tag) {
+                    continue;
+                }
+                if (Vector3.Distance(transform.position, target) <= Range) {
+                    CurrentTarget = enemy;
+                }
+            } 
         }
     }
 }
