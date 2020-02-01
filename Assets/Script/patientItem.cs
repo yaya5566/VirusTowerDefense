@@ -31,6 +31,7 @@ public class patientItem : MonoBehaviour
         if(fMoveTmp >= 1) {
             isMove = false;
             fMoveTmp = 0;
+            Destroy(gameObject);
         }
         
     }
