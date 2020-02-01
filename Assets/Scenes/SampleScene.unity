@@ -491,3 +491,5 @@ MonoBehaviour:
   - {fileID: 7953041891531562531, guid: e9aebb52843334fd7af61cc4d2d3b255, type: 3}
   - {fileID: 1186248080752936904, guid: 38b129e8157434858b64a299a4e48fe2, type: 3}
   bg: {fileID: 1352026242}
+  patientItem: {fileID: 853616185123074522, guid: fb5e4fb945fc04073b2568fbe89b3515,
+    type: 3}
