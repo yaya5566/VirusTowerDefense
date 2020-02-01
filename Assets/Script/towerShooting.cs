@@ -8,12 +8,12 @@ public class towerShooting : MonoBehaviour
     
     public int Range;
     public string TowerName;
-    public GameObject enemyGenerator;
+    public enemyGenerator eg;
 
     private GameObject CurrentTarget;
     void Start()
     {
-        
+        eg = FindObjectOfType<enemyGenerator>();
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class towerShooting : MonoBehaviour
             SearchTarget();
         }
         else if(CurrentTarget != null) {
+            Debug.Log(CurrentTarget.name);
             Vector3 targetPosition = new Vector3(CurrentTarget.transform.position.x, transform.position.y, transform.position.z);
             if (Vector3.Distance(transform.position, targetPosition) > Range || CurrentTarget.tag == "Repaired") {
                 CurrentTarget = null;
@@ -33,7 +34,7 @@ public class towerShooting : MonoBehaviour
 
     void SearchTarget() 
     {
-        foreach (var enemy in enemyGenerator.GetComponent<enemyGenerator>().Enemies){
+        foreach (var enemy in eg.Enemies){
             Vector3 target = new Vector3(enemy.transform.position.x, enemy.transform.position.y, 0);
             if (enemy.tag != gameObject.tag) {
                 continue;
