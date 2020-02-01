@@ -26,6 +26,7 @@ public class towerItem : MonoBehaviour
         // gameObject.GetComponent<Button>().onClick.AddListener(delegate{
         //     onClick();
         // });
+        gameObject.tag = "Type1";
     }
 
     void onClick() {
@@ -51,6 +52,7 @@ public class towerItem : MonoBehaviour
                 // sprite.color = new Color(255, 255, 255);
             break;
         }
+
     }
 
     // Update is called once per frame

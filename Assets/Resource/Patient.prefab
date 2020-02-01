@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9180975280740821557}
   - component: {fileID: 9180975280740821556}
   - component: {fileID: 9180975280740821515}
+  - component: {fileID: -8132640925742547288}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -145,3 +146,16 @@ MonoBehaviour:
   moveSpeed: 3
   rb: {fileID: 9180975280740821556}
   MovementDirection: 0
+--- !u!114 &-8132640925742547288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9180975280740821514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aaca60537b549adbbd95bb23127a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 10
