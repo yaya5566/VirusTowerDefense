@@ -39,22 +39,26 @@ public class towerItem : MonoBehaviour
         switch(eTIT) {
             case TOWER_ITEM_TYPE.NONE:
                 eTIT = TOWER_ITEM_TYPE.RED;
+                gameObject.tag = "Type1";
                 // sprite.sprite = ListSprTowerFull[0];
                 // sprite.color = new Color(255, 0, 0);
             break;
             case TOWER_ITEM_TYPE.RED:
                 eTIT = TOWER_ITEM_TYPE.GREEN;
                 sprite.sprite = ListSprTowerFull[0];
+                gameObject.tag = "Type2";
                 // sprite.color = new Color(0, 255, 0);
             break;
             case TOWER_ITEM_TYPE.GREEN:
                 eTIT = TOWER_ITEM_TYPE.BLUE;
                 sprite.sprite = ListSprTowerFull[1];
+                gameObject.tag = "Type3";
                 // sprite.color = new Color(0, 0, 255);
             break;
             case TOWER_ITEM_TYPE.BLUE:
                 eTIT = TOWER_ITEM_TYPE.NONE;
                 sprite.sprite = ListSprTowerFull[2];
+                gameObject.tag = "Type1";
                 // sprite.color = new Color(255, 255, 255);
             break;
         }
