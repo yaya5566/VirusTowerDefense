@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 4553828277008690064}
   - component: {fileID: 4553828277008690067}
   - component: {fileID: 3346360286158203980}
-  - component: {fileID: -4631984054338155812}
+  - component: {fileID: 1834213005461662960}
   m_Layer: 5
   m_Name: towerItem
   m_TagString: Untagged
@@ -298,6 +298,27 @@ MonoBehaviour:
   - {fileID: 6129529999791899061}
   - {fileID: 8291082774330640939}
   selectTowerNode: {fileID: 8459325406058463112}
+--- !u!114 &1834213005461662960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553828277008690071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7722038efcc7c7049b764f252a7726c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 4
+  TowerName: 
+  eg: {fileID: 0}
+  bulletType1: {fileID: 853616185123074522, guid: a751c8d03657da144ad47d1b1b96234d,
+    type: 3}
+  bulletType2: {fileID: 853616185123074522, guid: 146f77a2e784813418480d46173d1403,
+    type: 3}
+  bulletType3: {fileID: 853616185123074522, guid: 47bf8b13c90014f458ebcd36ac34aefd,
+    type: 3}
 --- !u!1 &6129529999791899061
 GameObject:
   m_ObjectHideFlags: 0
