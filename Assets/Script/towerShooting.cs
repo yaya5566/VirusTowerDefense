@@ -63,7 +63,7 @@ public class towerShooting : MonoBehaviour
             bullet.GetComponent<bulletItem>().target = CurrentTarget;
             CD = false;
             gameObject.GetComponent<towerItem>().subBullet();
-            Invoke("RunCD", 0.7f);
+            Invoke("RunCD", 0.5f);
         }
     }
     void SearchTarget() 

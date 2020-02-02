@@ -5,6 +5,7 @@ using UnityEngine;
 public class patientItem : MonoBehaviour
 {
     public int HP = 10;
+    public int Energy = 0;
     private int attributes = 1;
     private float fSec = 10;
     private float fMoveTmp = 0;
@@ -24,6 +25,8 @@ public class patientItem : MonoBehaviour
     {
         if (HP <= 0) {
             gameObject.tag = "Repaired";
+            gameManager.Instance.addIEnergy(Energy);
+            Destroy(gameObject);
         }
         // 移動腳本改由patientMovement.cs處理
         // if(isMove == true) {

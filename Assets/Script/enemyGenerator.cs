@@ -46,7 +46,7 @@ public class enemyGenerator : MonoBehaviour
     private bool isState = false; // 0 = pause
     int nowWave=1;
     private int patientAmount = 0;
-    private float waitTime=0f;
+    private float waitTime=5f;
     private int energy=0;
 
     [SerializeField]
@@ -61,7 +61,7 @@ public class enemyGenerator : MonoBehaviour
     void Start()
     {
         waveDataInit();
-        Init();
+        Invoke("Init", waitTime);
     }
 
     // Update is called once per frame
@@ -70,6 +70,7 @@ public class enemyGenerator : MonoBehaviour
     void Init() 
     {
         if (!getWaveEnergy()){
+            Debug.Log("getWaveEnergy end");
             return;
         }
         gameManager.Instance.addIEnergy(energy);
@@ -83,6 +84,7 @@ public class enemyGenerator : MonoBehaviour
     void Wait()
     {
         if (isAllWaveEnd()){
+            Debug.Log("isAllWaveEnd end");
             return;
         }
         if (isWaveEnd()){
@@ -180,65 +182,205 @@ public class enemyGenerator : MonoBehaviour
         waveDataObject tempWaveData = new waveDataObject();
         int nowPatientNo=1;
         int nowWaveNo=1;
-        tempWaveData.nextWaveTime=3f;
+        tempWaveData.nextWaveTime=5f;
         tempWaveData.initEnergy=80;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=3f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=3f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=2f});
-        nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0f});
         nowPatientNo++;
         waveData.Add(nowWaveNo,tempWaveData);
-        nowWaveNo++;
 
+        nowWaveNo=2;
         nowPatientNo=1;
         tempWaveData = new waveDataObject();
-        tempWaveData.nextWaveTime=3f;
+        tempWaveData.nextWaveTime=5f;
         tempWaveData.initEnergy=50;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=1f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=3f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=3f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=1f});
         nowPatientNo++;
         tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=2f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=1f});
         nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=3f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=2f});
+        nowPatientNo++;  
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0f});
+        nowPatientNo++;                       
         waveData.Add(nowWaveNo,tempWaveData);
         nowWaveNo++;
 
 
+        nowWaveNo=3;
         nowPatientNo=1;
         tempWaveData = new waveDataObject();
-        tempWaveData.nextWaveTime=3f;
+        tempWaveData.nextWaveTime=5f;
         tempWaveData.initEnergy=50;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=0.5f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.5f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=1f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
         nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=1.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=1f});
+        nowPatientNo++;  
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=1f});
+        nowPatientNo++;             
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=1.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0f});
+        nowPatientNo++;        
         waveData.Add(nowWaveNo,tempWaveData);
-        nowWaveNo++;
 
 
+        nowWaveNo=4;
         nowPatientNo=1;
         tempWaveData = new waveDataObject();
-        tempWaveData.nextWaveTime=3f;
+        tempWaveData.nextWaveTime=5f;
         tempWaveData.initEnergy=50;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0.5f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0.5f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1.5f});
         nowPatientNo++;
-        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=2f});
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=0.5f});
         nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=1.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=1.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=1f});
+        nowPatientNo++;  
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=1f});
+        nowPatientNo++;             
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=1f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0.5f});
+        nowPatientNo++;   
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="YellowPill",nextPatientTime=0.5f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=0.2f});
+        nowPatientNo++;  
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="BlueMask",nextPatientTime=0.2f});
+        nowPatientNo++;             
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="RadSyringe",nextPatientTime=0.2f});
+        nowPatientNo++;   
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;  
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;             
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0.2f});
+        nowPatientNo++;
+        tempWaveData.newPatient(nowPatientNo,new patientDataObject(){patientTag="NewVirus",nextPatientTime=0f});
+        nowPatientNo++;     
         waveData.Add(nowWaveNo,tempWaveData);
-        nowWaveNo++;
 
     }
 }
