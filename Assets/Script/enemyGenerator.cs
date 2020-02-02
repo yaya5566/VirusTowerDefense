@@ -16,9 +16,11 @@ public class enemyGenerator : MonoBehaviour
         public float nextWaveTime =0f;
         public int initEnergy=0;
         int nowPatientNo=1;
+        public int maxPatientNo=1;
         private Dictionary<int,patientDataObject> Rounds=new Dictionary<int, patientDataObject>();
         public void newPatient(int patientNo,patientDataObject patientData){
             Rounds.Add(patientNo,patientData);
+            maxPatientNo++;
             return;
         }
         public bool getAndRemovePatient(out patientDataObject patient){
@@ -29,6 +31,7 @@ public class enemyGenerator : MonoBehaviour
         }     
         public float getNextPatientTime(){
             patientDataObject patient;
+            gameManager.Instance.nowSchedule=nowPatientNo;
             Rounds.TryGetValue(nowPatientNo,out patient);
             return patient.nextPatientTime;
         }       
@@ -167,6 +170,7 @@ public class enemyGenerator : MonoBehaviour
         while (true){
             if (waveData.TryGetValue(nowWave,out tempWaveData)){
                 energy=tempWaveData.initEnergy;
+                gameManager.Instance.maxSchedule=tempWaveData.maxPatientNo;
                 return true;
             }
             waveData.Remove(nowWave);

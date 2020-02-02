@@ -17,6 +17,9 @@ public class gameManager {
         }
     }
 
+    public int maxSchedule=0;
+    public int nowSchedule=0;
+
     private int iEnergy=0;
     private int iWave=0;
     private int iHP=10;
