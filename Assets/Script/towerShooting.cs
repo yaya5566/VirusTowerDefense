@@ -27,7 +27,7 @@ public class towerShooting : MonoBehaviour
         if(CurrentTarget == null) {
             SearchTarget();
         }
-        else if(CurrentTarget != null && gameObject.tag != "") {
+        else if(CurrentTarget != null && gameObject.tag != "" && GetComponent<towerItem>().getIBullet() > 0) {
             Vector3 targetPosition = new Vector3(CurrentTarget.transform.position.x, transform.position.y, transform.position.z);
             if (Vector3.Distance(transform.position, targetPosition) > Range || CurrentTarget.tag == "Repaired") {
                 CurrentTarget = null;
