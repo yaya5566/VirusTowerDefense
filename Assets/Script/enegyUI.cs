@@ -32,8 +32,8 @@ public class enegyUI : MonoBehaviour
     void Update()
     {
         enegy = gameManager.Instance.IEnergy;
-        // nowWave = gameManager.Instance.IWave;
-        // ChangeImage(wave,waveImg[nowWave]);
+        nowWave = gameManager.Instance.IWave;
+        ChangeImage(gameObject, waveImg[nowWave]);
         thousandDigit = enegy/1000;
         houndredDigit = (enegy%1000)/100;
         tenDigit = (enegy%100)/10;

@@ -49,7 +49,7 @@ public class gameManager {
     }
 
     public void addIWave(int value) {
-        iEnergy += value;
+        iWave += value;
     }
 
     public bool addIHP(int value) {
