@@ -3858,6 +3858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerItem
       objectReference: {fileID: 0}
+    - target: {fileID: 4553828277008690071, guid: ef1d848c37e0a42d59373d5af68945ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef1d848c37e0a42d59373d5af68945ec, type: 3}
 --- !u!1001 &1775103163
