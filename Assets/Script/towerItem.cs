@@ -36,7 +36,6 @@ public class towerItem : MonoBehaviour
     }
 
     void onClick(TOWER_ITEM_TYPE _eTIT) {
-        eTIT = _eTIT;
         if (eTIT==TOWER_ITEM_TYPE.NONE){
             if(!gameManager.Instance.addIEnergy(-50)) {
                 Debug.LogError("energy error");
@@ -57,6 +56,7 @@ public class towerItem : MonoBehaviour
 
             }
         }
+        eTIT = _eTIT;
         // gameManager.Instance.addIHP(-1);
         switch(eTIT) {
             case TOWER_ITEM_TYPE.NONE:

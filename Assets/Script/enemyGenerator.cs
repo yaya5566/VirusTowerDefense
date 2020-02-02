@@ -64,7 +64,13 @@ public class enemyGenerator : MonoBehaviour
     void Start()
     {
         waveDataInit();
-        Invoke("Init", waitTime);
+        if (!getWaveEnergy()){
+            Debug.Log("getWaveEnergy end");
+            return;
+        }
+        gameManager.Instance.addIEnergy(energy);
+        isState = true;
+        Invoke("Generate", waitTime);
     }
 
     // Update is called once per frame
