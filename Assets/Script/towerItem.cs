@@ -39,17 +39,20 @@ public class towerItem : MonoBehaviour
         eTIT = _eTIT;
         if(eTIT == _eTIT) {
             if(!gameManager.Instance.addIEnergy(iBulletNum - 10)) {
+                Debug.LogError("energy error");
                 return;
             } else {
-                Debug.LogError("energy error");
+                
             }
         } else {
             if(!gameManager.Instance.addIEnergy(-10)) {
+                Debug.LogError("energy error");
                 return;
             } else {
-                 Debug.LogError("energy error");
+
             }
         }
+        gameManager.Instance.addIHP(-1);
         switch(eTIT) {
             case TOWER_ITEM_TYPE.NONE:
                 gameObject.tag = "";
