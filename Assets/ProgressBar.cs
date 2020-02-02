@@ -5,34 +5,31 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
+
     //HP條的Image組件
-    public Image hpBar;
+    public Image EnergyBar;
     //最大生命值
-    public float MaxHp = 0;
+    public float MaxEnergy = 100;
     //當前生命值
-    private float nowHP;
+    private float nowEnergy;
+    public gameManager gm;
 
     void Start()
     {
-        nowHP = MaxHp;
+        MaxEnergy = gm.IEnergy;
+        nowEnergy = MaxEnergy;
     }
 
 
     void Update()
     {
-        //每秒扣5 HP 歸0後自動回滿
-        nowHP -= Time.deltaTime * 5;
-        /*if (nowHP > 0)
-        {
-            nowHP = MaxHp;
-        }*/
+        nowEnergy  = gm.IEnergy;
 
-        //更新畫面顯示
         updateHPBar();
     }
     void updateHPBar()
     {
-        hpBar.fillAmount = 1-(nowHP / MaxHp);
+        EnergyBar.fillAmount = 1-(nowEnergy / MaxEnergy);
     }
 }
 
