@@ -4925,6 +4925,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 209e9befa021b45cd8fd86a6d0280bcb, type: 3}
   - {fileID: 21300000, guid: 677d39c0c2f2b4fe1a10ad73a0c1f033, type: 3}
   - {fileID: 21300000, guid: 1bcabbef558854e5080f2383be63916d, type: 3}
+  waveImg:
+  - {fileID: 21300000, guid: f6502282d6d074c879528a8d2a40314a, type: 3}
+  - {fileID: 21300000, guid: d5bf8e23227894178b1e81e3e6fdb0af, type: 3}
+  - {fileID: 21300000, guid: 6a2408bcc33ce45f69968e07970503f2, type: 3}
+  - {fileID: 21300000, guid: d4abbe6bc617f44c4a4ec6eaf381161e, type: 3}
+  wave: {fileID: 1137160850}
   thousand: {fileID: 1351171600}
   houndred: {fileID: 1194015711}
   ten: {fileID: 1715853364}
@@ -5386,6 +5392,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 209e9befa021b45cd8fd86a6d0280bcb, type: 3}
   - {fileID: 21300000, guid: 677d39c0c2f2b4fe1a10ad73a0c1f033, type: 3}
   - {fileID: 21300000, guid: 1bcabbef558854e5080f2383be63916d, type: 3}
+  waveImg: []
+  wave: {fileID: 0}
   thousand: {fileID: 1351171600}
   houndred: {fileID: 1194015711}
   ten: {fileID: 1715853364}
