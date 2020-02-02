@@ -171,6 +171,7 @@ public class enemyGenerator : MonoBehaviour
             if (waveData.TryGetValue(nowWave,out tempWaveData)){
                 energy=tempWaveData.initEnergy;
                 gameManager.Instance.maxSchedule=tempWaveData.maxPatientNo;
+                gameManager.Instance.addIWave(1);
                 return true;
             }
             waveData.Remove(nowWave);
