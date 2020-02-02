@@ -27,7 +27,7 @@ public class towerShooting : MonoBehaviour
         if(CurrentTarget == null) {
             SearchTarget();
         }
-        else if(CurrentTarget != null) {
+        else if(CurrentTarget != null && gameObject.tag != "") {
             Vector3 targetPosition = new Vector3(CurrentTarget.transform.position.x, transform.position.y, transform.position.z);
             if (Vector3.Distance(transform.position, targetPosition) > Range || CurrentTarget.tag == "Repaired") {
                 CurrentTarget = null;
@@ -46,13 +46,13 @@ public class towerShooting : MonoBehaviour
     {
         if(CD == true) {
             switch(gameObject.tag) {
-                case "Type1":
+                case "RedSyringe":
                 bulletObj = bulletType1;
                 break;
-                case "Type2":
+                case "BlueMask":
                 bulletObj = bulletType2;
                 break;
-                case "Type3":
+                case "YellowPill":
                 bulletObj = bulletType3;
                 break;
                 default:
@@ -62,6 +62,7 @@ public class towerShooting : MonoBehaviour
             GameObject bullet = UnityEngine.Object.Instantiate<GameObject>(bulletObj, transform);
             bullet.GetComponent<bulletItem>().target = CurrentTarget;
             CD = false;
+            gameObject.GetComponent<towerItem>().subBullet();
             Invoke("RunCD", 0.7f);
         }
     }

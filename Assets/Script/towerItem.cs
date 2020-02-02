@@ -7,7 +7,7 @@ public enum TOWER_ITEM_TYPE {
     NONE,
     RED,
     GREEN,
-    BLUE
+    YELLOW
 }
 
 public class towerItem : MonoBehaviour
@@ -24,6 +24,7 @@ public class towerItem : MonoBehaviour
     private GameObject selectTowerNode;
     // Start is called before the first frame update
     private TOWER_ITEM_TYPE eTIT = TOWER_ITEM_TYPE.NONE; 
+    private int iBulletNum = 0;
 
     void Start()
     {
@@ -31,37 +32,47 @@ public class towerItem : MonoBehaviour
         // gameObject.GetComponent<Button>().onClick.AddListener(delegate{
         //     onClick();
         // });
-        gameObject.tag = "Type1";
+        gameObject.tag = "";
     }
 
     void onClick(TOWER_ITEM_TYPE _eTIT) {
         eTIT = _eTIT;
+        if(eTIT == _eTIT) {
+            if(!gameManager.Instance.addIEnergy(iBulletNum - 10)) {
+                return;
+            } else {
+                Debug.LogError("energy error");
+            }
+        } else {
+            if(!gameManager.Instance.addIEnergy(-10)) {
+                return;
+            } else {
+                 Debug.LogError("energy error");
+            }
+        }
         switch(eTIT) {
             case TOWER_ITEM_TYPE.NONE:
-                eTIT = TOWER_ITEM_TYPE.RED;
-                gameObject.tag = "Type1";
+                gameObject.tag = "";
                 // sprite.sprite = ListSprTowerFull[0];
                 // sprite.color = new Color(255, 0, 0);
             break;
             case TOWER_ITEM_TYPE.RED:
-                eTIT = TOWER_ITEM_TYPE.GREEN;
                 sprite.sprite = ListSprTowerFull[0];
-                gameObject.tag = "Type2";
+                gameObject.tag = "RedSyringe";
                 // sprite.color = new Color(0, 255, 0);
             break;
             case TOWER_ITEM_TYPE.GREEN:
-                eTIT = TOWER_ITEM_TYPE.BLUE;
                 sprite.sprite = ListSprTowerFull[1];
-                gameObject.tag = "Type3";
+                gameObject.tag = "BlueMask";
                 // sprite.color = new Color(0, 0, 255);
             break;
-            case TOWER_ITEM_TYPE.BLUE:
-                eTIT = TOWER_ITEM_TYPE.NONE;
+            case TOWER_ITEM_TYPE.YELLOW:
                 sprite.sprite = ListSprTowerFull[2];
-                gameObject.tag = "Type1";
+                gameObject.tag = "YellowPill";
                 // sprite.color = new Color(255, 255, 255);
             break;
         }
+        iBulletNum = 10;
 
     }
 
@@ -74,6 +85,29 @@ public class towerItem : MonoBehaviour
     // }
 
     // Update is called once per frame
+    public void subBullet() {
+        iBulletNum--;
+        if(iBulletNum == 0) {
+            switch(eTIT) {
+                case TOWER_ITEM_TYPE.NONE:
+                break;
+                case TOWER_ITEM_TYPE.RED:
+                    sprite.sprite = ListSprTowerDie[0];
+                break;
+                case TOWER_ITEM_TYPE.GREEN:
+                    sprite.sprite = ListSprTowerDie[1];
+
+                break;
+                case TOWER_ITEM_TYPE.YELLOW:
+                    sprite.sprite = ListSprTowerDie[2];
+                break;
+            }
+            gameObject.tag = "";
+        }
+    }
+    public int getIBullet() {
+        return iBulletNum;
+    }
     void Update()
     {
         if(Input.GetMouseButtonUp(0)) {

@@ -35,7 +35,7 @@ public class gameManager {
         }
     }
 
-    public bool addIEergy(int value) {
+    public bool addIEnergy(int value) {
         if(value + iEnergy >= 0) {
             iEnergy += value;
             return true;
