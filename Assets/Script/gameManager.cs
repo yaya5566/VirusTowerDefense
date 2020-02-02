@@ -19,7 +19,7 @@ public class gameManager {
 
     private int iEnergy=0;
     private int iWave=0;
-    private int iHP=1;
+    private int iHP=10;
     public int IEnergy {
         get {
             return iEnergy;

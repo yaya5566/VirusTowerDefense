@@ -13,6 +13,7 @@ public class endTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D Coll){
         Debug.Log("OnTrigger"+Coll.gameObject.ToString());
         Destroy(Coll.gameObject);
+        gameManager.Instance.addIHP(-1);
     }
 
 }
