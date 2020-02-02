@@ -187,7 +187,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 6e665d9705a194b56a07d57f49cea80a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4104d348d8cb45bfa6706cd54991c49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -286,13 +286,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 3125126033251956159}
   ListSprTowerFull:
+  - {fileID: 21300000, guid: d4104d348d8cb45bfa6706cd54991c49, type: 3}
   - {fileID: 21300000, guid: 6e665d9705a194b56a07d57f49cea80a, type: 3}
   - {fileID: 21300000, guid: 621c234e76d15468d8011c367ddf3f4d, type: 3}
-  - {fileID: 21300000, guid: d4104d348d8cb45bfa6706cd54991c49, type: 3}
   ListSprTowerDie:
+  - {fileID: 21300000, guid: 85c9a15469d7d4c738c6028c488a9f7b, type: 3}
   - {fileID: 21300000, guid: fb697b041eeca4af0b9c3f19a4fbb31a, type: 3}
   - {fileID: 21300000, guid: dbbef0455f3b3404eac811e8e3f6c464, type: 3}
-  - {fileID: 21300000, guid: 85c9a15469d7d4c738c6028c488a9f7b, type: 3}
   ListSelectTower:
   - {fileID: 2316362607903051065}
   - {fileID: 6129529999791899061}
@@ -394,7 +394,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 621c234e76d15468d8011c367ddf3f4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e665d9705a194b56a07d57f49cea80a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -506,7 +506,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: d4104d348d8cb45bfa6706cd54991c49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 621c234e76d15468d8011c367ddf3f4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

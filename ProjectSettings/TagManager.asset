@@ -8,6 +8,10 @@ TagManager:
   - Type2
   - Type3
   - Repaired
+  - NewVirus
+  - BlueMask
+  - RedSyringe
+  - YellowPill
   layers:
   - Default
   - TransparentFX

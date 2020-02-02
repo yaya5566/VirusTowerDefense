@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameManager {
     private static gameManager m_Instance = null;
@@ -35,7 +36,7 @@ public class gameManager {
         }
     }
 
-    public bool addIEergy(int value) {
+    public bool addIEnergy(int value) {
         if(value + iEnergy >= 0) {
             iEnergy += value;
             return true;
@@ -49,11 +50,12 @@ public class gameManager {
     }
 
     public bool addIHP(int value) {
-        if(value + iEnergy > 0) {
-            iEnergy += value;
+        if(value + iHP > 0) {
+            iHP += value;
             return true;
         } else {
             Debug.LogError("game over");
+            SceneManager.LoadScene("EndScene");
             return false;
         }  
     }
