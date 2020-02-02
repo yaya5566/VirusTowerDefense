@@ -17,7 +17,8 @@ public class endScence : MonoBehaviour
             Application.Quit();
         });
         btnRe.onClick.AddListener(delegate() {
-            SceneManager.LoadScene("StartScene");
+            gameManager.Instance.Re();
+            SceneManager.LoadScene("HospitalScene");
         });
     }
 

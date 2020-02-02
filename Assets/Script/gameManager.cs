@@ -17,6 +17,15 @@ public class gameManager {
         }
     }
 
+    public void Re() {
+        maxSchedule=0;
+        nowSchedule=0;
+
+        iEnergy=0;
+        iWave=0;
+        iHP=10;
+    }
+
     public int maxSchedule=0;
     public int nowSchedule=0;
 
