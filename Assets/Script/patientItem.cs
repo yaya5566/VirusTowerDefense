@@ -10,14 +10,22 @@ public class patientItem : MonoBehaviour
     private float fSec = 10;
     private float fMoveTmp = 0;
     private bool isMove = false;
+    Animator anima;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anima = gameObject.GetComponent<Animator>();
+
     }
 
     public void Go() {
         isMove = true;
+    }
+
+    void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -26,7 +34,8 @@ public class patientItem : MonoBehaviour
         if (HP <= 0) {
             gameObject.tag = "Repaired";
             gameManager.Instance.addIEnergy(Energy);
-            Destroy(gameObject);
+            anima.SetTrigger("heal");
+            Invoke("DestroySelf", 0.95f);
         }
         // 移動腳本改由patientMovement.cs處理
         // if(isMove == true) {
@@ -39,6 +48,6 @@ public class patientItem : MonoBehaviour
         //     isMove = false;
         //     fMoveTmp = 0;
         // }
-        
+
     }
 }
