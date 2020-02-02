@@ -8,11 +8,15 @@ public class enegyUI : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<Sprite> numImg;
+    public List<Sprite> waveImg;
+    public GameObject wave;
     public GameObject thousand;
     public GameObject houndred;
     public GameObject ten;
     public GameObject one;
     private int enegy;
+
+    private int nowWave;
     private int thousandDigit;
     private int houndredDigit;
 
@@ -28,6 +32,8 @@ public class enegyUI : MonoBehaviour
     void Update()
     {
         enegy = gameManager.Instance.IEnergy;
+        // nowWave = gameManager.Instance.IWave;
+        // ChangeImage(wave,waveImg[nowWave]);
         thousandDigit = enegy/1000;
         houndredDigit = (enegy%1000)/100;
         tenDigit = (enegy%100)/10;
