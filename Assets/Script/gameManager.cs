@@ -17,9 +17,9 @@ public class gameManager {
         }
     }
 
-    private int iEnergy;
-    private int iWave;
-    private int iHP;
+    private int iEnergy=0;
+    private int iWave=0;
+    private int iHP=1;
     public int IEnergy {
         get {
             return iEnergy;

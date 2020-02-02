@@ -610,7 +610,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384805874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4744,8 +4744,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemies: []
-  delayTime: 3
-  patientItem: {fileID: 9180975280740821514, guid: 29e4e13af6791d14788f187f2ace7050,
+  patient_NewVirus: {fileID: 4923621703799115194, guid: eacc6961c3e6ea24ab9ab85ba6faa6b6,
+    type: 3}
+  patient_BlueMask: {fileID: 9180975280740821514, guid: 29e4e13af6791d14788f187f2ace7050,
+    type: 3}
+  patient_RadSyringe: {fileID: 1285587400765916551, guid: 7f2bc51bacf097d4aaa85e8c3c2590ad,
+    type: 3}
+  patient_YellowPill: {fileID: 8408557922082172054, guid: 6012c8852dcf3ba41a38d460703d5c3f,
     type: 3}
 --- !u!4 &1081237319
 Transform:
@@ -5277,7 +5282,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999629252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

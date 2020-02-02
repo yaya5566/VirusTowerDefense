@@ -11,19 +11,19 @@ public class ProgressBar : MonoBehaviour
     //最大生命值
     public float MaxEnergy = 100;
     //當前生命值
-    private float nowEnergy;
-    public gameManager gm;
+    private float nowEnergy = 0f;
+
 
     void Start()
     {
-        MaxEnergy = gm.IEnergy;
+        MaxEnergy = gameManager.Instance.IEnergy;
         nowEnergy = MaxEnergy;
     }
 
 
     void Update()
     {
-        nowEnergy  = gm.IEnergy;
+        nowEnergy  = gameManager.Instance.IEnergy;
 
         updateHPBar();
     }

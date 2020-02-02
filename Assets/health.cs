@@ -7,7 +7,6 @@ public class health : MonoBehaviour
     public List<GameObject> hearts;
 
     private int HP;
-    public gameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,7 @@ public class health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HP = gm.IHP;
+        HP = gameManager.Instance.IHP;
         for(int i = 10; i > HP; i--)
         {
             hearts[i-1].SetActive(false);
