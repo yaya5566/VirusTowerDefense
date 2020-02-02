@@ -25,6 +25,7 @@ public class patientItem : MonoBehaviour
 
     void DestroySelf()
     {
+        gameManager.Instance.addIEnergy(Energy);
         Destroy(gameObject);
     }
 
@@ -33,7 +34,6 @@ public class patientItem : MonoBehaviour
     {
         if (HP <= 0) {
             gameObject.tag = "Repaired";
-            gameManager.Instance.addIEnergy(Energy);
             anima.SetTrigger("heal");
             Invoke("DestroySelf", 0.95f);
         }
