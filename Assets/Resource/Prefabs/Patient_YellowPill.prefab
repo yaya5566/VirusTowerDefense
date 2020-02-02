@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97444841f05ba284aa6e16634378b444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.8
+  moveSpeed: 1.6
   rb: {fileID: 8408557922082172072}
   MovementDirection: 0
 --- !u!114 &358982387783989300
@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8aaca60537b549adbbd95bb23127a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
-  Energy: 5
+  HP: 9
+  Energy: 4
 --- !u!95 &-397938777531775837
 Animator:
   serializedVersion: 3
