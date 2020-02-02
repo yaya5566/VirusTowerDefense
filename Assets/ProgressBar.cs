@@ -16,20 +16,21 @@ public class ProgressBar : MonoBehaviour
 
     void Start()
     {
-        MaxEnergy = gameManager.Instance.IEnergy;
+        MaxEnergy = gameManager.Instance.maxSchedule;
         nowEnergy = MaxEnergy;
     }
 
 
     void Update()
     {
-        nowEnergy  = gameManager.Instance.IEnergy;
+        MaxEnergy = gameManager.Instance.maxSchedule;
+        nowEnergy  = gameManager.Instance.nowSchedule;
 
         updateHPBar();
     }
     void updateHPBar()
     {
-        EnergyBar.fillAmount = 1-(nowEnergy / MaxEnergy);
+        EnergyBar.fillAmount = (nowEnergy / MaxEnergy);
     }
 }
 
