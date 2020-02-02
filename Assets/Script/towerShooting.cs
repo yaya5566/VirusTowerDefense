@@ -62,6 +62,7 @@ public class towerShooting : MonoBehaviour
             GameObject bullet = UnityEngine.Object.Instantiate<GameObject>(bulletObj, transform);
             bullet.GetComponent<bulletItem>().target = CurrentTarget;
             CD = false;
+            audioManager.Instance.createAudio("Audio/SFX_Shoot");
             gameObject.GetComponent<towerItem>().subBullet();
             Invoke("RunCD", 0.5f);
         }

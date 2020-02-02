@@ -122,6 +122,7 @@ public class towerItem : MonoBehaviour
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if(sprite.GetComponent<BoxCollider2D>().OverlapPoint(mousePosition))
             {
+                audioManager.Instance.createAudio("Audio/SFX_Hit");
                 sprite.transform.localScale = new Vector3(0.1f, 0.1f, 1);
                 selectTowerNode.SetActive(true);
                 // if(selectTowerNode.activeSelf == true) {
@@ -133,6 +134,7 @@ public class towerItem : MonoBehaviour
             } else {
                 for(int i = 0;i < ListSelectTower.Count;i++) {
                     if(ListSelectTower[i].GetComponent<BoxCollider2D>().OverlapPoint(mousePosition)) {
+                        audioManager.Instance.createAudio("Audio/SFX_Hit");
                         ListSelectTower[i].transform.localScale = new Vector3(0.1f, 0.1f, 1);
                         onClick((TOWER_ITEM_TYPE)(i + 1));
                     }
